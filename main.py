@@ -39,7 +39,7 @@ class MyDataset(Dataset):
 
 
 def train(model,train_set,test_set,fea,adj,tei,epoch,learn_rate):
-    optimizer=torch.optim.Adam(model.parameters(),learn_rate,weight_decay=0.001)
+    optimizer=torch.optim.Adam(model.parameters(),learn_rate,weight_decay=5e-4)
     cost=nn.CrossEntropyLoss()
     model.train()
     fea,adj = fea.float(),adj.float()
