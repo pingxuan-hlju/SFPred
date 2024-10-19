@@ -18,6 +18,7 @@ def position(H, W, is_cuda=True):
 
 def stride(x, stride):
     b, c, h, w = x.shape
+
     return x[:, :, ::stride, ::stride]
 
 
