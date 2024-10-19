@@ -60,8 +60,8 @@ class SDGCN(nn.Module):
             nn.ReLU(),
             nn.Dropout(0.5)
         )
-        self.a = nn.Parameter(torch.tensor(1.0))
-        self.b = nn.Parameter(torch.tensor(0.0))
+        self.a = nn.Parameter(torch.randn(1))
+        self.b = nn.Parameter(torch.randn(1))
         self.act = nn.Sigmoid()
         self.fc1 = nn.Sequential(
             nn.Linear(1134, 128),
