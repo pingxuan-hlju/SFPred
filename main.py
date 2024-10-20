@@ -39,7 +39,7 @@ class MyDataset(Dataset):
 
 
 def train(model,train_set,test_set,fea,adj,tei,epoch,learn_rate):
-    optimizer=torch.optim.Adam(model.parameters(),learn_rate,weight_decay=5e-4)
+    optimizer=torch.optim.Adam(model.parameters(),learn_rate,weight_decay=0.0005)
     cost=nn.CrossEntropyLoss()
     model.train()
     fea,adj = fea.float(),adj.float()
@@ -230,6 +230,6 @@ if __name__ == "__main__":
     parser.add_argument('--dropout', type=float, default=0.9, help='batch size for training')
     parser.add_argument('--train_bt', type=int, default=128, help='batch size for training')
     parser.add_argument('--test_bt', type=int, default=500, help='batch size for training')
-    parser.add_argument('--lr', type=float, default=1e-4, help='batch size for training')
+    parser.add_argument('--lr', type=float, default=0.001, help='batch size for training')
     args = parser.parse_args()
     run_model(args)
